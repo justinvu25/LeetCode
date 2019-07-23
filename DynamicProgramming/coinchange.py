@@ -3,7 +3,7 @@ class Solution:
         dp = [amount + 1] * (amount + 1) # creates array length of amount
         dp[0] = 0 
         
-        for i in range(amount + 1): 
+        for i in range(len(dp)): 
             for j in range(len(coins)):
                 if (coins[j] <= i):
                     dp[i] = min(dp[i], 1 + dp[i - coins[j]])
